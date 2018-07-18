@@ -15,7 +15,7 @@
 	</head>
 	<body>
 	<div>
-		<button>Randomise!</button>
+		<button>Randomise11!</button>
 	</div>
 	<br>
 
@@ -49,6 +49,12 @@
 			   .data(dataset)
 			   .enter()
 			   .append("rect")
+			-						.transition()
+-                        .delay(function(d, i) {
+-                            return i * 100;
+-                        })
+-						.duration(1000)
+-						.ease(d3.easeBounceOut)
 			   .attr("x", function(d, i) {
 			   		return xScale(i);
 			   })
